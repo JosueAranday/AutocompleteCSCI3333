@@ -1,13 +1,14 @@
-include "autocompleter.h"
+#include "autocompleter.h"
 
 Autocompleter::Autocompleter()
 {
-	root = nullptr;
+	root = new Node;
+    count = 0;
 }
 
 // Extra helper function
 
-void updateTop(vector<Entry>& top, const Entry& entry){
+void Autocompleter::updateTop(vector<Entry>& top, const Entry& entry){
 	if (top.size() == 0){
     	top.push_back(entry);
     }
@@ -45,7 +46,7 @@ void Autocompleter::insert(string x, int freq){
     newEntry.s = x;
     newEntry.freq = freq;
 
-    updateTop(root->top, newEntry);
+    updateTop(arrow->top, newEntry);
 
 	for (int i = 0; i < x.length(); i++){
 		if (arrow->children[x[i]] == nullptr)
@@ -77,6 +78,6 @@ void Autocompleter::completions(string x, vector<string> &T){
 	}
 
 	for (const Entry& entry : arrow->top){
-		T.push_back(entry.s)
+        T.push_back(entry.s);
 	}
 }
