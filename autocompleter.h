@@ -37,6 +37,7 @@ class Autocompleter
 		void completions(string x, vector<string> &T);
 
 	private:
+
 		// A helper class that stores a string and a frequency.
 		class Entry
 		{
@@ -57,7 +58,7 @@ class Autocompleter
 				}
 
 				bool marked;
-				vector<Entry> top;
+				vector<Entry> top; // This needs to hold the top 3 strings
 				Node* children[256];
 		};
 
