@@ -24,4 +24,4 @@ Create a new C++ source file named autocompleter.cpp that implements the class d
 so that autocompleter.cpp and the provided files compile into a program that runs with no failed tests.
 Submit the source file autocompleter.cpp.
 
-![Trie](image.png)
+![Trie](Screenshot2025-10-21_130827.png)
